@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Cards from './components/Cards/Cards';
+import Chart from './components/Chart/Chart';
+import CountryPicker from './components/CountryPicker/CountryPicker';
+import styles from './App.module.css';
+import {fetchData} from './api';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+class App extends React.Component {
+    state = {
+        data : {},
+        country: ''
+    }
+    async componentDidMount(){
+        const fetchedData = await fetchData();
+        this.setState({ data : fetchedData })
+    }
+    
+    handleCountryChange = async (country) => {
+        //fetch data 
+        //then set state
+        //console.log(country)
+        const fetchedData = await fetchData(country);
+        this.setState({ data : fetchedData ,
+                       country: country
+                       })
+        console.log(fetchedData);
+    }
+    render(){
+        const {data ,country} = this.state
+        return(
+            <div className={styles.container}>
+            <h1 style={{textAlign:"center",backgroundColor:"black"}} >
+            <span style={{color:"ivory",}}>COVID</span><span style={{color:"grey"}}>-19</span>
+            </h1> 
+            <Cards data={data}/>
+            <CountryPicker handleCountryChange={this.handleCountryChange} />                       
+            <Chart data={data} country={country} />
+            </div>
+        );
+    }
+};
 
 export default App;
