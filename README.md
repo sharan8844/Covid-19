@@ -3,7 +3,7 @@
 <br>-> This project helped me strengthen the understanding of React's workflow and the use of hooks.
 <br>-> API used: https://covid19.mathdro.id/api
 <br><br>
-# => [**GO TO LIVE SITE**](https://sharan8844.github.io/Covid-19/)
+# => [**GO TO LIVE SITE !**](https://sharan8844.github.io/Covid-19/)
 <br><br>
 ## **SNAPSHOTS**:
 ![](/src/lineC.png)
