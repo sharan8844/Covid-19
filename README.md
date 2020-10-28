@@ -6,8 +6,9 @@
 **=>** [**GO TO LIVE SITE**]()
 <br><br>
 ## **SNAPSHOTS**:
-![]()
+![](/src/lineC)
 <br><br>
+![](/src/barC)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+{ This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). }
 
